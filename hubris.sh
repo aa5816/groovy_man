@@ -23,3 +23,8 @@ assert 'xxxxx' == '12345'.replaceAll(/\d/, 'x') //makes all digits x and sserts 
 assert x + y == 3
 assert x.plus(y) == 3
 assert x instanceof Integer //numbers are not primitive types in groovy but objects of java.lang.Integer
+
+def roman = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII'] //creating a list
+assert roman[4] == 'IV'
+roman[8] = 'VIII' //dynamically increase the size of list
+assert roman.size() == 9
