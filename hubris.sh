@@ -37,3 +37,12 @@ def http = [
 assert http[200] == 'OK'
 http[500] = 'INTERNAL SERVER ERROR'
 assert http.size() == 4
+
+def o = 1..10
+assert o.contains(5)
+assert !o.contains(15)
+assert o.size() == 10
+assert o.from == 1
+assert o.to == 10
+assert o.reverse() == 10..1
+assert o.contains (10)
