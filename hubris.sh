@@ -11,5 +11,9 @@ assert x == 1
 def y = 1; assert y == 1
 
 // << means texttexttexthello
+
 assert ('text'*3 << 'hello').size () == 4 * 3 + 5 
 
+assert '12345' =~ /\d+/ //asserts if they are didgits
+
+assert 'xxxxx' == '12345'.replaceAll(/\d/, 'x') //makes all digits x and sserts it
