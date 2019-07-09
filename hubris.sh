@@ -17,3 +17,9 @@ assert ('text'*3 << 'hello').size () == 4 * 3 + 5
 assert '12345' =~ /\d+/ //asserts if they are didgits
 
 assert 'xxxxx' == '12345'.replaceAll(/\d/, 'x') //makes all digits x and sserts it
+
+def x = 1
+def y = 2
+assert x + y == 3
+assert x.plus(y) == 3
+assert x instanceof Integer //numbers are not primitive types in groovy but objects of java.lang.Integer
