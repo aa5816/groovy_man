@@ -56,3 +56,42 @@ def partyPeople = 100
 totalClinks += clinksWithGuest
 }
 assert totalClinks == (partyPeople * (partyPeople-1)) / 2
+
+//control structures in groovy === basic examples
+if (false) assert false //The if as one-liner
+
+if (null)  //null is false, Blocks may start on new line
+{
+assert false
+}
+else
+{
+assert true
+}
+
+def i = 0
+while (i < 10) {  //Classic while
+i++
+}
+assert i == 10
+
+def clinks = 0 //The for in range
+for (remainingGuests in 0..9) {
+clinks += remainingGuests
+}
+assert clinks == (10*9)/2
+
+def list = [0, 1, 2, 3]  //The for in list
+for (j in list) {
+assert j == list[j]
+}
+
+list.each() { item ->    //The each method with a closure
+assert item == list[item]
+}
+
+switch(3) {                  // basic switch
+case 1 : assert false; break
+case 3 : assert true; break
+default: assert false
+}
