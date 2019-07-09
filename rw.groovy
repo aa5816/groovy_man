@@ -1,19 +1,4 @@
 
-class Book 
-{
-private String title
-
-Book (String theTitle) 
-{
-title = theTitle
-}
-
-String getTitle ()
-{
-return title
-}
-
-}
 
 Book fiona = new Book('The name of the wind')
 assert fiona.getTitle() == 'The name of the wind'
