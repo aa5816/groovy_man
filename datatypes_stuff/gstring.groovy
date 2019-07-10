@@ -4,6 +4,7 @@ def me = 'Tarzan'
 def you = 'Jane'
 def line = "me $me - you $you"    //Abbreviated dollar syntax
 assert line == 'me Tarzan - you Jane'
+assert line instanceof GString
 
 TimeZone.default = TimeZone.getTimeZone('GMT')
 def date = new Date(0)
