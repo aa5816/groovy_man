@@ -12,6 +12,10 @@ throw new IllegalArgumentException("cannot add $other.currency to $currency")
 }
 return new Money(amount + other.amount, currency)
 }
+
+Money plus (Integer more) {
+return new Money(amount + more, currency)
+}
 }
 
 Money buck = new Money(1, 'USD')
@@ -20,3 +24,4 @@ assert buck == new Money(1, 'USD') //Uses overridden ==
 assert buck + buck == new Money(2, 'USD') //asserts that our operator is implemented
 Money cash = new Money (2, 'INR')
 // buck + cash ,this will through an IllegalArgumentException with the message can't add INR TO USD 
+assert buck + 1 == new Money(2, 'USD')
