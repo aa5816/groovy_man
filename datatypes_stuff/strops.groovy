@@ -1,4 +1,4 @@
-String greeting = 'Hello Groovy!'
+def greeting = 'Hello Groovy!'
 assert greeting.startsWith('Hello')
 assert greeting.getAt(0) == 'H'
 assert greeting[0] == 'H'
