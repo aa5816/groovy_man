@@ -11,3 +11,11 @@ assert 'x'.padLeft(3) == '  x'
 assert 'x'.padRight(3,'_') == 'x__'
 assert 'x'.center(3) == ' x '
 assert 'x' * 3 == 'xxx'
+
+def greeting = 'Hello'
+greeting <<= ' Groovy'
+assert greeting instanceof java.lang.StringBuffer
+greeting << '!'
+assert greeting.toString() == 'Hello Groovy!'
+greeting[1..4] = 'i'
+assert greeting.toString() == 'Hi Groovy!'
