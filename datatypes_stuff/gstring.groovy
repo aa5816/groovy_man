@@ -16,14 +16,12 @@ def format = 'd MMM YYYY HH:mm:SS z'
 out = "Date is ${date.format(format, tz)} !" //full syntax with braces
 assert out == 'Date is 1 Jan 1970 00:00:00 GMT !'
 
-def sql = """       //Multiline GStrings
+//Multiline GStrings
+def sql = """       
 SELECT FROM MyTable
 WHERE Year = $dateMap.y
 """
-assert sql == """
-SELECT FROM MyTable
-WHERE Year = 70
-"""
+println sql
 
 out = "my 0.02\$"  // Escaped dollar sign
 assert out == 'my 0.02$'
