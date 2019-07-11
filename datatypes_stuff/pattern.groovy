@@ -60,7 +60,7 @@ matcher.each { full, key, value ->
     assert value.size() == 1 // 1,2,3
 }
 
-def regex= /\b(\w)\w*\1\b/
+def regex= /\b(\w)\w*\1\b/ 
 def many = 100*1000
 start = System.nanoTime()
 many.times {patm =~ regex}        // ~string --> pattern operator is faster than normal matches
