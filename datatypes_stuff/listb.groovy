@@ -1,74 +1,67 @@
-List myList = [1, 2, 3]
-assert myList.size() == 3
-assert myList[0] == 1
-assert myList instanceof ArrayList
-List emptyList = []
-assert emptyList.size() == 0
-List longList = (0..1000).toList()
-assert longList[555] == 555
+def manbun = (1..100)
+def s=0
+for (i in manbun)
+s+=i
+assert s == 50*101
+print "lists man, they irritate me"
 
-List explicitList = new ArrayList()
-explicitList.addAll(myList)                     //Fills from myList
-assert explicitList.size() == 3
-explicitList[0] = 10
-assert explicitList[0] == 10
+def mylist = [1,2,3]
+assert mylist.size () == 3
+assert mylist[0] == 1
+assert mylist instanceof ArrayList
 
-explicitList = new LinkedList(myList)
-assert explicitList.size() == 3
-explicitList[0] = 10
-assert explicitList[0] == 10
+def emp = []
+assert emp.size () == 0
 
-myList = ['a','b','c','d','e','f']
-assert myList[0..2] == ['a','b','c']   //getAt(Range)
+def longs = (0..1000).toList ()
+assert longs[555] == 555
 
-assert myList[0,2,4] == ['a','c','e'] //getAt(collection of indexes)
+def expl = new ArrayList ()
+expl.addAll (mylist)
+assert expl.size () == 3
+expl[0] = 10
+assert expl[0] == 10
 
-myList[0..2] = ['x','y','z'] //putAt(Range)
-assert myList == ['x','y','z','d','e','f']
+mylist = "abcdef".toList ()
+assert mylist[0..2] == ['a','b','c']
+assert mylist[0,2,4] == ['a','c','e']
 
+mylist[0..2] = ['x','y','z']
+assert mylist == "xyzdef".toList ()
+mylist[3..5] = []
+assert mylist == "xyz".toList ()
+mylist[1..1] = [1,2,3]
+assert mylist == ['x',1,2,3,'z']
 
-myList[3..5] = []        //Removing elements
-assert myList == ['x','y','z']
+mylist = []
+mylist += 'a'
+assert mylist == ['a']
 
-myList[1..1] = [0, 1, 2]   //Adding elements
-assert myList == ['x', 0, 1, 2, 'z']
+mylist += ['b','v']
+assert mylist == ['a','b','v']
 
-myList = []
+mylist = []
+mylist << 'a' << 'b'
+assert mylist == ['a','b']
 
-myList += 'a'   //plus(Object)
-assert myList == ['a']
+assert mylist - ['b'] == ['a']
+assert mylist *2 == ['a','b','a','b']
 
-myList += ['b','c']  //plus(Collection)
-assert myList == ['a','b','c']
+mylist = "abc".toList ()
+assert mylist.isCase ('a')
+assert 'b' in mylist
 
-myList = []
-myList << 'a' << 'b'  //leftShift is like append
-assert myList == ['a','b']
+def can= 'c'
+switch (can)
+{ case mylist : assert true; break
+   default : assert false 
+  }
+assert ['x','a','z'].grep(mylist) == ['a']
 
-assert myList - ['b'] == ['a']   //minus(Collection)
+mylist = []
+if (mylist) assert false
 
-assert myList * 2 == ['a','b','a','b']  //Multiply
-
-myList = ['a', 'b', 'c']
-
-assert myList.isCase('a')
-assert 'b' in myList
-
-def candidate = 'c'
-switch(candidate){
-case myList : assert true; break  //Classifies by containment
-default: assert false
-}
-
-assert ['x','a','z'].grep(myList) == ['a']     //Intersection filter
-
-myList = []          //Empty lists are false
-if (myList) assert false
-// Lists can be iterated with a 'for' loop
-def expr = ''
-
-for (i in [1,'*',5]){  //Iterates over a list
-expr += i
-} 
+def expr=''
+for (i in [1,'*',5]) {
+expr +=i}
 assert expr == '1*5'
-
